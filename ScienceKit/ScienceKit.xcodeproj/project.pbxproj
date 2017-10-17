@@ -10,6 +10,8 @@
 		BE1A169B1F960C8F001B197E /* ScienceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1A16911F960C8F001B197E /* ScienceKit.framework */; };
 		BE1A16A01F960C8F001B197E /* ScienceKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A169F1F960C8F001B197E /* ScienceKitTests.swift */; };
 		BE1A16A21F960C8F001B197E /* ScienceKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BE1A16941F960C8F001B197E /* ScienceKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE1A16AD1F9612E2001B197E /* stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1A16AC1F9612E2001B197E /* stats.swift */; };
+		BE1A16B01F96131F001B197E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1A16AF1F96131F001B197E /* Accelerate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		BE1A169A1F960C8F001B197E /* ScienceKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScienceKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1A169F1F960C8F001B197E /* ScienceKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScienceKitTests.swift; sourceTree = "<group>"; };
 		BE1A16A11F960C8F001B197E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE1A16AC1F9612E2001B197E /* stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stats.swift; sourceTree = "<group>"; };
+		BE1A16AF1F96131F001B197E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1A16B01F96131F001B197E /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,7 @@
 				BE1A16931F960C8F001B197E /* ScienceKit */,
 				BE1A169E1F960C8F001B197E /* ScienceKitTests */,
 				BE1A16921F960C8F001B197E /* Products */,
+				BE1A16AE1F96131F001B197E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +77,7 @@
 		BE1A16931F960C8F001B197E /* ScienceKit */ = {
 			isa = PBXGroup;
 			children = (
+				BE1A16AB1F9611B4001B197E /* stats */,
 				BE1A16941F960C8F001B197E /* ScienceKit.h */,
 				BE1A16951F960C8F001B197E /* Info.plist */,
 			);
@@ -84,6 +91,22 @@
 				BE1A16A11F960C8F001B197E /* Info.plist */,
 			);
 			path = ScienceKitTests;
+			sourceTree = "<group>";
+		};
+		BE1A16AB1F9611B4001B197E /* stats */ = {
+			isa = PBXGroup;
+			children = (
+				BE1A16AC1F9612E2001B197E /* stats.swift */,
+			);
+			path = stats;
+			sourceTree = "<group>";
+		};
+		BE1A16AE1F96131F001B197E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE1A16AF1F96131F001B197E /* Accelerate.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +171,7 @@
 				TargetAttributes = {
 					BE1A16901F960C8F001B197E = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					BE1A16991F960C8F001B197E = {
@@ -196,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1A16AD1F9612E2001B197E /* stats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +358,7 @@
 		BE1A16A61F960C8F001B197E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -347,6 +373,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = shyamalchandra.ScienceKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -354,6 +381,7 @@
 		BE1A16A71F960C8F001B197E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -375,6 +403,7 @@
 		BE1A16A91F960C8F001B197E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ScienceKitTests/Info.plist;
@@ -388,6 +417,7 @@
 		BE1A16AA1F960C8F001B197E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ScienceKitTests/Info.plist;
